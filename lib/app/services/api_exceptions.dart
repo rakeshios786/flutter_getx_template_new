@@ -21,13 +21,14 @@ class ApiException implements Exception {
   toString() {
     String result = '';
     // if server sent error message take it
-    if(response != null){
-      try{
+    if (response != null) {
+      try {
         // TODO add error message field which is coming from api for you
         result += response!.data['message'];
-      }catch(_){}
-    }else {
-      result += ' ' + message; // message is the (dio error message) so usualy its not user friendly
+      } catch (_) {}
+    } else {
+      result +=
+          ' $message'; // message is the (dio error message) so usualy its not user friendly
     }
 
     return result;
